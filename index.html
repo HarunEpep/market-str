@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="description" content="STR8 Market - Premium Keylogger Shop">
+    <title>STR8 MARKET · Premium Keylogger</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo" data-text="STR8">STR8<span>MARKET</span></div>
+        <div class="nav-badge">ONLINE 24/7</div>
+    </nav>
+
+    <div id="pageHome" class="page active">
+        <section class="hero-section">
+            <div class="hero-avatar-wrapper">
+                <img src="https://i.top4top.io/p_38385l2on1.jpg" alt="STR8" class="hero-avatar">
+            </div>
+            <h1>STR8 <span>MARKET</span></h1>
+            <p class="hero-tagline">Premium Keylogger Solution</p>
+        </section>
+
+        <!-- TOMBOL ORDER UTAMA -->
+        <div style="padding: 0 20px 24px; display: flex; gap: 12px;">
+            <a href="https://wa.me/6285731899425?text=Halo%20Bang%2C%20saya%20mau%20beli%20keylog%20Public%2FPrivate%207%2F1%20Bulan%2FPermanen%20VIP" target="_blank" class="contact-btn wa-btn" style="flex:1;">
+                <i class="fab fa-whatsapp"></i> Beli via WA
+            </a>
+            <a href="https://discord.gg/e8wyPbbHKS" target="_blank" class="contact-btn dc-btn" style="flex:1;">
+                <i class="fab fa-discord"></i> Join Discord
+            </a>
+        </div>
+
+        <div class="category-filter">
+            <div class="cat-chip active" onclick="filterProducts('all', this)">SEMUA</div>
+            <div class="cat-chip" onclick="filterProducts('public', this)">PUBLIC</div>
+            <div class="cat-chip" onclick="filterProducts('private', this)">PRIVATE</div>
+        </div>
+
+        <div class="section-title"><i class="fas fa-bolt"></i> PRODUK KAMI</div>
+        <div class="product-grid" id="productGrid">
+            <!-- Di-render via JS -->
+        </div>
+
+        <div class="pros-cons">
+            <div class="pc-grid">
+                <div class="pc-box pro">
+                    <h4><i class="fas fa-shield-halved"></i> KEUNGGULAN PRIVATE</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Bisa Share Otomatis Pakai Bot*</li>
+                        <li><i class="fas fa-check"></i> Data cuma lu yang lihat (Full Privacy)</li>
+                        <li><i class="fas fa-check"></i> Prioritas support 24/7</li>
+                        <li><i class="fas fa-check"></i> Anti Detect 100%</li>
+                    </ul>
+                </div>
+                <div class="pc-box con">
+                    <h4><i class="fas fa-triangle-exclamation"></i> KEKURANGAN PUBLIC</h4>
+                    <ul>
+                        <li><i class="fas fa-xmark"></i> Ga bisa share otomatis pakai bot*</li>
+                        <li><i class="fas fa-xmark"></i> Data dilihat semua buyer public</li>
+                        <li><i class="fas fa-xmark"></i> Rebutan UCP dengan buyer lain</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-bar">
+            <div class="info-chip"><i class="fas fa-lock"></i>Secure</div>
+            <div class="info-chip"><i class="fas fa-bolt"></i>Fast Setup</div>
+            <div class="info-chip"><i class="fas fa-headset"></i>24/7 Support</div>
+            <div class="info-chip"><i class="fas fa-ban"></i>No Refund</div>
+        </div>
+
+        <div class="testimoni-section">
+            <div class="section-title" style="padding:0 0 8px 0;"><i class="fas fa-star"></i> TESTIMONI</div>
+            <div class="testimoni-grid" id="testimoniGrid">
+                <!-- Di-render via JS -->
+            </div>
+        </div>
+
+        <div style="padding:0 20px 20px;">
+            <div class="section-title" style="padding:0 0 12px 0;"><i class="fas fa-link"></i> HUBUNGI KAMI</div>
+            <div class="contact-wrap">
+                <a href="https://wa.me/6285731899425?text=Halo%20Bang%2C%20saya%20mau%20beli%20keylog%20Public%2FPrivate%207%2F1%20Bulan%2FPermanen%20VIP" target="_blank" class="contact-btn wa-btn">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="https://discord.gg/e8wyPbbHKS" target="_blank" class="contact-btn dc-btn">
+                    <i class="fab fa-discord"></i> Discord
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="pageAbout" class="page">
+        <div style="padding:20px;">
+            <div class="section-title" style="padding:0 0 16px 0;"><i class="fas fa-circle-info"></i> TENTANG KAMI</div>
+            <div class="about-section">
+                <h3>Apa itu Keylogger?</h3>
+                <p>
+                    Keylogger adalah alat untuk merekam setiap penekanan tombol. 
+                    Digunakan untuk <span class="highlight-green">monitoring aktivitas</span>, <span class="highlight-blue">keamanan</span>, dan <span class="highlight-red">debugging</span>.
+                    Keylogger berjalan di background dan menangkap semua input yang diketik oleh user.
+                </p>
+
+                <h3>PUBLIC vs PRIVATE</h3>
+                <p>
+                    <span class="highlight-red">Public</span> — Data dari semua buyer dikumpulkan di channel yang sama. 
+                    Siapa pun bisa lihat data UCP buyer lain. Harga lebih murah, tapi privasi minim. 
+                    Cocok untuk yang budget terbatas, tapi siap <span class="highlight-red">rebutan UCP</span>!
+                </p>
+                <p>
+                    <span class="highlight-green">Private</span> — Channel khusus untuk lu sendiri. 
+                    Data tidak bisa dilihat buyer lain. Dedicated server dan prioritas support. 
+                    Cocok untuk yang ingin <span class="highlight-green">full privacy</span> dan keamanan maksimal.
+                </p>
+
+                <h3>Cara Order</h3>
+                <p>
+                    1. Pilih produk yang diinginkan (Public atau Private).<br>
+                    2. Klik produk untuk melihat detail dan harga.<br>
+                    3. Klik tombol <span class="highlight-blue">Beli Sekarang</span> yang tersedia.<br>
+                    4. Lu bakal diarahkan langsung ke WhatsApp atau Discord.<br>
+                    5. Lakukan pembayaran sesuai instruksi admin.<br>
+                    6. Admin akan memberikan akses keylogger.
+                </p>
+
+                <h3>Kebijakan</h3>
+                <p>
+                    <span class="highlight-red">NO REFUND</span> — Setelah pembelian, tidak ada pengembalian dana.<br>
+                    <span class="highlight-red">NO MERCY</span> — Kami tidak bertoleransi pada penyalahgunaan.<br>
+                    <span class="highlight-green">ONLY RESULTS</span> — Produk kami sudah teruji dan siap pakai.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <nav class="bottom-nav">
+        <div class="bn-item active" id="bnHome" onclick="showPage('home')"><i class="fas fa-house"></i>Home</div>
+        <div class="bn-item" id="bnAbout" onclick="showPage('about')"><i class="fas fa-circle-info"></i>About</div>
+    </nav>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
