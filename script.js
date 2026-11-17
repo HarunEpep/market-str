@@ -24,17 +24,17 @@ const WA_NUMBER = '6285731899425'; // Ganti nomor WA lu
 const DISCORD_LINK = 'https://discord.gg/e8wyPbbHKS'; // Ganti link Discord lu
 
 const products = [
-    { id: 1, name: 'PUBLIC 7 Hari', price: 5000, dur: '7 Hari', type: 'public', icon: 'public', badge: '', stars: 5, reviews: 12, 
+    { id: 1, name: 'PUBLIC 7 Hari', price: 3000, dur: '7 Hari', type: 'public', icon: 'public', badge: '', stars: 5, reviews: 12, 
       detail: 'Akses keylogger public selama 7 hari. Data masuk ke channel bersama. Cocok buat nyoba dulu.' },
     { id: 2, name: 'PUBLIC 1 Bulan', price: 10000, dur: '1 Bulan', type: 'public', icon: 'public', badge: 'best', stars: 5, reviews: 8, 
       detail: 'Akses keylogger public selama 1 Bulan. Harga lebih hemat untuk durasi lebih lama.' },
     { id: 3, name: 'PUBLIC PERMANENT', price: 25000, dur: 'Permanent', type: 'public', icon: 'public', badge: 'popular', stars: 5, reviews: 1, 
       detail: 'Akses keylogger public SELAMANYA. Sekali bayar, pakai terus. No expired!' },
-    { id: 4, name: 'PRIVATE 7 Hari', price: 10000, dur: '7 Hari', type: 'private', icon: 'private', badge: '', stars: 5, reviews: 20, 
+    { id: 4, name: 'PRIVATE 7 Hari', price: 5000, dur: '7 Hari', type: 'private', icon: 'private', badge: '', stars: 5, reviews: 20, 
       detail: 'Akses keylogger private selama 7 hari. Data cuma lu yang lihat. Dedicated server + prioritas support.' },
-    { id: 5, name: 'PRIVATE 1 Bulan', price: 25000, dur: '1 Bulan', type: 'private', icon: 'private', badge: 'best', stars: 5, reviews: 6, 
+    { id: 5, name: 'PRIVATE 1 Bulan', price: 15000, dur: '1 Bulan', type: 'private', icon: 'private', badge: 'best', stars: 5, reviews: 6, 
       detail: 'Akses keylogger private selama 1 bulan penuh. Full privacy, dedicated server, prioritas support.' },
-    { id: 6, name: 'PRIVATE PERMANENT', price: 50000, dur: 'Permanent', type: 'private', icon: 'private', badge: 'popular', stars: 5, reviews: 5, 
+    { id: 6, name: 'PRIVATE PERMANENT', price: 40000, dur: 'Permanent', type: 'private', icon: 'private', badge: 'popular', stars: 5, reviews: 5, 
       detail: 'Akses keylogger private SELAMANYA. Full privacy, dedicated server, prioritas support 24/7. Best value!' },
 ];
 
