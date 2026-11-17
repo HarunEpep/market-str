@@ -3,42 +3,35 @@ document.addEventListener('contextmenu', function(e) {
 });
 
 document.addEventListener('keydown', function(e) {
-    // F12
-    if (e.key === 'F12' || e.keyCode === 123) {
-        e.preventDefault();
-        return false;
-    }
-    // Ctrl+Shift+I, J, C (Inspect Element)
-    if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C' || e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) {
-        e.preventDefault();
-        return false;
-    }
-    // Ctrl+U (View Source)
-    if (e.ctrlKey && (e.key === 'U' || e.keyCode === 85)) {
-        e.preventDefault();
-        return false;
-    }
+    if (e.key === 'F12' || e.keyCode === 123) { e.preventDefault(); return false; }
+    if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C' || e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) { e.preventDefault(); return false; }
+    if (e.ctrlKey && (e.key === 'U' || e.keyCode === 85)) { e.preventDefault(); return false; }
 });
 
 const WA_NUMBER = '6285731899425'; // Ganti nomor WA lu
 const DISCORD_LINK = 'https://discord.gg/e8wyPbbHKS'; // Ganti link Discord lu
 
 const products = [
-    { id: 1, name: 'PUBLIC 7 Hari', price: 3000, dur: '7 Hari', type: 'public', icon: 'public', badge: '', stars: 5, reviews: 12, 
+    { id: 1, name: 'PUBLIC 7 Hari', price: 5000, dur: '7 Hari', type: 'public', icon: 'public', badge: '', stars: 5, reviews: 12, 
       detail: 'Akses keylogger public selama 7 hari. Data masuk ke channel bersama. Cocok buat nyoba dulu.' },
     { id: 2, name: 'PUBLIC 1 Bulan', price: 10000, dur: '1 Bulan', type: 'public', icon: 'public', badge: 'best', stars: 5, reviews: 8, 
       detail: 'Akses keylogger public selama 1 Bulan. Harga lebih hemat untuk durasi lebih lama.' },
     { id: 3, name: 'PUBLIC PERMANENT', price: 25000, dur: 'Permanent', type: 'public', icon: 'public', badge: 'popular', stars: 5, reviews: 1, 
       detail: 'Akses keylogger public SELAMANYA. Sekali bayar, pakai terus. No expired!' },
-    { id: 4, name: 'PRIVATE 7 Hari', price: 5000, dur: '7 Hari', type: 'private', icon: 'private', badge: '', stars: 5, reviews: 20, 
+    { id: 4, name: 'PRIVATE 7 Hari', price: 10000, dur: '7 Hari', type: 'private', icon: 'private', badge: '', stars: 5, reviews: 20, 
       detail: 'Akses keylogger private selama 7 hari. Data cuma lu yang lihat. Dedicated server + prioritas support.' },
-    { id: 5, name: 'PRIVATE 1 Bulan', price: 15000, dur: '1 Bulan', type: 'private', icon: 'private', badge: 'best', stars: 5, reviews: 6, 
+    { id: 5, name: 'PRIVATE 1 Bulan', price: 25000, dur: '1 Bulan', type: 'private', icon: 'private', badge: 'best', stars: 5, reviews: 6, 
       detail: 'Akses keylogger private selama 1 bulan penuh. Full privacy, dedicated server, prioritas support.' },
-    { id: 6, name: 'PRIVATE PERMANENT', price: 40000, dur: 'Permanent', type: 'private', icon: 'private', badge: 'popular', stars: 5, reviews: 5, 
+    { id: 6, name: 'PRIVATE PERMANENT', price: 50000, dur: 'Permanent', type: 'private', icon: 'private', badge: 'popular', stars: 5, reviews: 5, 
       detail: 'Akses keylogger private SELAMANYA. Full privacy, dedicated server, prioritas support 24/7. Best value!' },
+      
+    // 🔥 PRODUK BARU: OPEN PT KEYLOGGER
+    { id: 7, name: 'OPEN PT 1 Bulan', price: 40000, dur: '1 Bulan', type: 'pt', icon: 'pt', badge: 'best', stars: 5, reviews: 3, 
+      detail: 'Bisa jualan Keylogger Public/Private, Bisa gunakan Bot Server, Balmod.' },
+    { id: 8, name: 'OPEN PT PERMANENT', price: 70000, dur: 'Permanent', type: 'pt', icon: 'pt', badge: 'popular', stars: 5, reviews: 2, 
+      detail: 'Akses selamanya. Bisa jualan Keylogger Public/Private, Bisa gunakan Bot Server, Balmod.' },
 ];
 
-// DATA TESTIMONI (Ditambahin biar banyak)
 const testimonials = [
     { initial: 'R', name: 'Rezz', text: 'gcor tambahin akses ya leeee', stars: 5, rating: '10000/10' },
     { initial: 'R', name: 'Rolland', text: 'Keylogger mantap Aldi Taher burger king', stars: 5, rating: '10/10' },
@@ -60,12 +53,16 @@ function renderProducts(filter = 'all') {
     const grid = document.getElementById('productGrid');
     const filtered = filter === 'all' ? products : products.filter(p => p.type === filter);
     
-    grid.innerHTML = filtered.map((p) => `
+    grid.innerHTML = filtered.map((p) => {
+        // Icon PT pakai icon user-tie biar beda
+        let iconClass = p.type === 'public' ? 'unlock' : (p.type === 'private' ? 'lock' : 'user-tie');
+        
+        return `
         <div class="product-card" onclick="orderProduct('${p.name}', ${p.price})">
             ${p.badge === 'best' ? '<span class="badge badge-best">BEST</span>' : ''}
             ${p.badge === 'popular' ? '<span class="badge badge-popular">TOP</span>' : ''}
-            <div class="product-icon ${p.icon}">
-                <i class="fas fa-${p.type === 'public' ? 'unlock' : 'lock'}"></i>
+            <div class="product-icon ${p.type}">
+                <i class="fas fa-${iconClass}"></i>
             </div>
             <h4>${p.name}</h4>
             <div class="price">Rp ${p.price.toLocaleString()}</div>
@@ -75,12 +72,12 @@ function renderProducts(filter = 'all') {
             </div>
             <div class="p-desc">${p.detail}</div>
         </div>
-    `).join('');
+        `;
+    }).join('');
 }
 
 function orderProduct(name, price) {
-    // Teks otomatis buat WhatsApp
-    const text = `Halo Bang, saya mau beli keylog *${name}* dengan harga Rp ${price.toLocaleString()}`;
+    const text = `Halo Bang, saya mau beli *${name}* dengan harga Rp ${price.toLocaleString()}`;
     const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
 }
@@ -111,7 +108,6 @@ function showToast(msg) {
     setTimeout(() => t.classList.remove('show'), 3000);
 }
 
-// Render Testimoni Langsung dari Data Array
 function loadTestimoni() {
     const grid = document.getElementById('testimoniGrid');
     grid.innerHTML = testimonials.map(t => `
@@ -128,6 +124,5 @@ function loadTestimoni() {
     `).join('');
 }
 
-// Init
 renderProducts();
 loadTestimoni();
