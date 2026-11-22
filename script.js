@@ -8,7 +8,7 @@ document.addEventListener('keydown', function(e) {
     if (e.ctrlKey && (e.key === 'U' || e.keyCode === 85)) { e.preventDefault(); return false; }
 });
 
-const WA_NUMBER = '6285731899425'; // Ganti nomor WA lu
+const WA_NUMBER = '6285706555748'; // Ganti nomor WA lu
 const DISCORD_LINK = 'https://discord.gg/e8wyPbbHKS'; // Ganti link Discord lu
 
 const products = [
